@@ -1,25 +1,19 @@
-import java.util.*;
-public class Swap {
-    int first,sec;
-    Swap(int x,int y){
-        first=x;
-        sec=y;
+//Call by value
+class Swap
+{
+    void swapVal(int a, int b)
+    {
+        int c=a;
+        a=b;
+        b=c;
+        System.out.println("In swap a="+a+"b="+b);
     }
-    void swapping(){
-        int t=first;
-        first=sec;
-        sec=t;
-        System.out.print("Frist number : "+ first+"\nSecond number: "+sec);
-    }
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter Frist Number: ");
-        int a=sc.nextInt();
-        System.out.println("Enter Second Number: ");
-        int b=sc.nextInt();
-        System.out.print("Initial : \n Frist number : "+ a+"\nSecond number: "+b);
-        Swap obj=new Swap(a,b);
-        obj.swapping();
-        sc.close();
+    public static void main(String args[])
+    {
+        int a=4,b=5;
+        Swap ob=new Swap();
+        System.out.println("In main before swap a="+a+"b="+b);
+        ob.swapVal(a,b);
+        System.out.println("In main after swap a="+a+"b="+b);
     }
 }
